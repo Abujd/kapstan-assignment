@@ -5,7 +5,7 @@ import DownArrow from "../svgs/DownArrow";
 import Correct from "../svgs/Correct";
 
 function ServiceInfoCard() {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
