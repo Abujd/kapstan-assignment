@@ -1,0 +1,42 @@
+@layer base {
+    h1 {
+      @apply md:text-[50px] text-[40px] leading-[100%];
+    }
+  
+    h2 {
+      @apply md:text-[36px] text-[30px] leading-[100%];
+    }
+  
+    h3 {
+      @apply md:text-[24px] text-[20px] leading-[100%];
+    }
+  
+    h4 {
+      @apply md:text-[16px] text-[14px] leading-[100%];
+    }
+  
+    h5 {
+      @apply text-[14px] leading-[21px];
+    }
+  
+    .medium {
+      @apply text-[15px] font-[500];
+    }
+  
+    .para {
+      @apply md:text-[14px] text-[12px];
+    }
+  
+    .text-base-bold {
+      @apply text-[11px] font-[700];
+    }
+  
+    .text-base-normal {
+      @apply text-[11px];
+    }
+  
+    .small {
+      @apply text-[9px] font-[300];
+    }
+  }
+  

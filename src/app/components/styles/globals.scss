@@ -1,0 +1,119 @@
+@tailwind base;
+@import "./fontFace.scss";
+@tailwind components;
+@tailwind utilities;
+
+$primary-color: #111b47;
+$secondary-color: #091133;
+$text-color: white;
+$blue: #6e27d5;
+:root {
+  --primary: 9, 17, 51;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  width: fit-content;
+}
+
+body {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(var(--primary));
+  background-color: rgb(var(--white));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-primary-gradient {
+  background: linear-gradient(90deg, #25196b 0%, #94d9cd 100%);
+}
+.main-page {
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px 50px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #6e27d5;
+  color: #fff;
+  border: none;
+
+  &:hover {
+    border: 2px solid #6e27d5;
+    background-color: transparent;
+    color: #6e27d5;
+  }
+}
+
+.btn-outlined {
+  border: 2px solid #6e27d5;
+  background-color: transparent;
+  color: #6e27d5;
+
+  &:hover {
+    background-color: #6e27d5;
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    font-size: 0.8rem;
+  }
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding-bottom: 16px;
+  border-bottom: 2px solid transparent; 
+}
+
+.active-tab {
+  font-weight: bold;
+  color: #6E27D5;
+  border-bottom-color: #6E27D5; 
+}
+.boxShadowStyle {
+  box-shadow: "1px 5px 4px -1px rgba(0, 0, 0, 0.06)",
+};
+
+.file-input-container {
+  text-align: center;
+  font-weight: 700;
+}
+
+.file-input {
+  display: none;
+}
+
+.custom-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+.file-name {
+  margin-top: 10px; 
+}
