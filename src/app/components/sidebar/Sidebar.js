@@ -11,7 +11,7 @@ import Save from "../svgs/Save";
 import Arrow from "../svgs/Arrow";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [sidebarWidth, setSidebarWidth] = useState(250);
 
   const toggleSidebar = () => {
