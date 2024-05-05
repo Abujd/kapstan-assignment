@@ -6,10 +6,10 @@ import { getDateFormat } from "../../../../../../utils/common";
 
 function EventHistory(props) {
   const [historyData, setHistoryData] = useState(null);
-  const [visibleItems, setVisibleItems] = useState(5);
+  const [visibleItems, setVisibleItems] = useState(4);
 
   const handleViewMore = () => {
-    setVisibleItems((prevVisibleItems) => prevVisibleItems + 5);
+    setVisibleItems((prevVisibleItems) => prevVisibleItems + 4);
   };
 
   const fetchApplications = async () => {
