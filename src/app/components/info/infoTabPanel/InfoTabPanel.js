@@ -10,7 +10,7 @@ import Alerts from "./Alerts";
 import HistoryTab from "./HistoryTab";
 
 function InfoTabPanel(props) {
-  const [selectedTab, setSelectedTab] = useState("EV");
+  const [selectedTab, setSelectedTab] = useState("OVERVIEW");
   const renderTabComponent = () => {
     switch (selectedTab) {
       case "OVERVIEW":
