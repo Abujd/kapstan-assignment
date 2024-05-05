@@ -55,6 +55,7 @@ body {
   background-color: #6e27d5;
   color: #fff;
   border: none;
+  border: 2px solid #6e27d5;
 
   &:hover {
     border: 2px solid #6e27d5;
@@ -70,6 +71,7 @@ body {
 
   &:hover {
     background-color: #6e27d5;
+    border: 2px solid #6e27d5;
     color: #fff;
   }
 }
