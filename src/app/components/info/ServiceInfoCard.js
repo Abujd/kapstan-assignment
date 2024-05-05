@@ -13,7 +13,7 @@ function ServiceInfoCard() {
 
   return (
     <div className="w-[100%]">
-      <div className={`border rounded-[8px] bg-[#fff] w-[85%] overflow-hidden ${isCollapsed ? "h-[60px]" : "h-auto"} transition-height duration-500`}>
+      <div className={`border rounded-[8px] bg-[#fff] overflow-hidden ${isCollapsed ? "h-[60px]" : "h-auto"} transition-height duration-500`}>
         <div
           className="flex items-center justify-between cursor-pointer px-[20px] py-[20px]"
           onClick={toggleCollapse}
