@@ -19,7 +19,12 @@ const statusData = [
     bgColor: "rgba(223, 149, 4, 0.12)",
     text: "In progress",
   },
-
+  {
+    type: "uninstalled",
+    color: "#DF0404",
+    bgColor: "rgba(255, 197, 197, 0.38)",
+    text: "uninstalled",
+  },
   {
     type: "successful",
     color: "#008767",
