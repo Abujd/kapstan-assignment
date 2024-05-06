@@ -17,11 +17,11 @@ function InfoHeading({selectedOption}) {
     <div className="w-full">
       <div className="flex justify-between px-[30px] items-center">
         <div className="text-[20px] pl-[10px] font-bold text-[#000000]">
-          {foundGame?.name}
+          {foundGame?.name ||  <>tic-tac-toe</>}
         </div>
 
         <div className={`flex gap-[8px] items-center ml-auto`}>
-          <Status type={foundGame?.status}/>
+          <Status type={foundGame?.status || "deployed"}/>
           <Menu />
         </div>
       </div>

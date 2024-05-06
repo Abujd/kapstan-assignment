@@ -40,7 +40,7 @@ function ServiceInfoCard({selectedOption}) {
             {foundGame?.version === foundGame?.desiredVersion ? <> <Correct /> In sync</> : <>{foundGame?.version}</>}
              
             </div>
-            <div>{foundGame?.desiredVersion}</div>
+            <div>{foundGame?.desiredVersion || <>1.2.1</>}</div>
           </div>
           <div className="flex items-center px-[20px] py-[10px] mb-[10px]">
             <button className="btn btn-primary">
