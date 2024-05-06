@@ -2,11 +2,11 @@ import React from "react";
 import InfoHeading from "./InfoHeading";
 import InfoTabPanel from "./infoTabPanel/InfoTabPanel";
 
-function Info(props) {
+function Info({selectedOption}) {
   return (
     <div>
-      <InfoHeading />
-      <InfoTabPanel />
+      <InfoHeading selectedOption={selectedOption}/>
+      <InfoTabPanel  selectedOption={selectedOption}/>
     </div>
   );
 }

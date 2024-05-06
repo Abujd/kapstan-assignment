@@ -9,12 +9,12 @@ import EnvironmentVariables from "./EnvironmentVariables";
 import Alerts from "./Alerts";
 import HistoryTab from "./HistoryTab";
 
-function InfoTabPanel(props) {
+function InfoTabPanel({selectedOption}) {
   const [selectedTab, setSelectedTab] = useState("OVERVIEW");
   const renderTabComponent = () => {
     switch (selectedTab) {
       case "OVERVIEW":
-        return <Overview />;
+        return <Overview selectedOption={selectedOption}/>;
       case "EV":
         return <EnvironmentVariables />;
       case "ALERTS":

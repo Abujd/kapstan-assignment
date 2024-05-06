@@ -4,9 +4,10 @@ import Select from "react-select";
 import styles from "./Navbar.module.scss";
 import { getApplications } from "../../../../utils/ApiService";
 
-function Navbar() {
+function Navbar({selectedOption, setSelectedOption}) {
   const [options, setOptions] = useState(null);
   const defaultOption = { value: "tic-tac-toe", label: "tic-tac-toe" };
+  const [response, setRes] = useState(null);
 
   const customStyles = {
     control: (provided, state) => ({
@@ -33,6 +34,7 @@ function Navbar() {
   const fetchApplications = async (isShowMore) => {
     try {
       const res = await getApplications();
+      setRes(res);
       const options = res.map((app) => ({
         value: app.name.toLowerCase().replace(/\s+/g, "-"),
         label: app.name,
@@ -42,6 +44,19 @@ function Navbar() {
       console.log("Error :: ", error);
     }
   };
+
+  const handleSelectChange = (e) => {
+    setSelectedOption(e.value);
+  };
+
+  useEffect(() => {
+    if (response) {
+      var foundGame = response.find((game) => game.name === selectedOption);
+      if (foundGame) {
+        localStorage.setItem("game", JSON.stringify(foundGame));
+      }
+    }
+  }, [selectedOption]);
 
   useEffect(() => {
     fetchApplications();
@@ -56,6 +71,9 @@ function Navbar() {
               defaultValue={defaultOption}
               options={options}
               styles={customStyles}
+              onChange={(e) => {
+                handleSelectChange(e);
+              }}
             />
           )}
         </div>
