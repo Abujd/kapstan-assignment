@@ -1,11 +1,20 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import UpArrow from "../svgs/UpArrow";
 import DownArrow from "../svgs/DownArrow";
 import Correct from "../svgs/Correct";
+import { getDateFormat } from '../../../../utils/common';
 
-function ServiceInfoCard() {
+function ServiceInfoCard({selectedOption}) {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [foundGame, setFoundGame] = useState(null);
+
+  useEffect(() => {
+    const storedGame = localStorage.getItem('game');
+    if (storedGame) {
+      setFoundGame(JSON.parse(storedGame));
+    }
+  }, [selectedOption]);
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
@@ -28,13 +37,16 @@ function ServiceInfoCard() {
           </div>
           <div className="flex text-[12px] gap-[20px] px-[20px] py-[10px]">
             <div className="basis-[10%] flex items-center gap-[5px]">
-              <Correct /> In sync
+            {foundGame?.version === foundGame?.desiredVersion ? <> <Correct /> In sync</> : <>{foundGame?.version}</>}
+             
             </div>
-            <div>1.2.1</div>
+            <div>{foundGame?.desiredVersion}</div>
           </div>
           <div className="flex items-center px-[20px] py-[10px] mb-[10px]">
-            <button className="btn btn-primary">Deploy</button>
-            <div className="text-[12px] text-[#595959] ml-auto">Last updated 5 hours ago</div>
+            <button className="btn btn-primary">
+              Deploy
+            </button>
+            <div className="text-[12px] text-[#595959] ml-auto">Last updated {foundGame?.updatedAt && getDateFormat(foundGame.updatedAt)}</div>
           </div>
         </div>
       </div>
